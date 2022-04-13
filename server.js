@@ -16,20 +16,17 @@ app.use(express.json());
 // built-in middleware to handle urlencoded form data
 app.use(express.urlencoded({ extended: false }));
 
-// post request handler for register user
+// post request handler for register user TODO: Create Controller
 app.use('/register', require('./routes/register'));
 
-
-//api for users data 
+//api for users data TODO: Create Router and Create Controller
 app.get('/api/users', async(req, res) => {
     let users = await fsPromises.readFile(path.join(__dirname, 'model', 'users.txt'), 'utf8');
     const userJson = JSON.parse(users);
     res.json(userJson);
 });
 
-
-
-// post request handler for log in 
+// post request handler for log in TODO: Create Router and Create Controller
 app.post('/login', async (req, res) => {
     const usersRaw = await fsPromises.readFile(path.join(__dirname, 'model', 'users.txt'), 'utf8');
     const users = JSON.parse(usersRaw);
