@@ -1,11 +1,9 @@
 // Simple Authentication System Sign-in/Sign-up with express js 
+//TODO : Connect Database to MongoDB
 
-const express = require("express");
+const express = require("express"); 
 const app = express();
-const bcrypt = require('bcrypt');
 const cors = require('cors');
-const fsPromises = require('fs').promises;
-const path = require('path');
 
 // Cross Origin Resource Sharing
 app.use(cors());
