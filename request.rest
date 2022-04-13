@@ -2,11 +2,11 @@ GET http://localhost:8080/api/users
 ###
 
 
-POST http://localhost:8080/users
+POST http://localhost:8080/register
 Content-Type: application/json
 
 {
-    "name": "admin1", 
+    "name": "admin4", 
     "password" : "admin"
 }
 
