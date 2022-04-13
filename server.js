@@ -1,4 +1,5 @@
-//Auth System Server for auth-react app 
+// Simple Authentication System Sign-in/Sign-up with express js 
+
 const express = require("express");
 const app = express();
 const bcrypt = require('bcrypt');
@@ -6,39 +7,31 @@ const cors = require('cors');
 const fsPromises = require('fs').promises;
 const path = require('path');
 
-app.use(express.json());
+// Cross Origin Resource Sharing
 app.use(cors());
 
+// built in middleware for json 
+app.use(express.json());
+
+// built-in middleware to handle urlencoded form data
+app.use(express.urlencoded({ extended: false }));
+
+// post request handler for register user
+app.use('/register', require('./routes/register'));
+
+
+//api for users data 
 app.get('/api/users', async(req, res) => {
-    let users = await fsPromises.readFile(path.join(__dirname, 'files', 'users.txt'), 'utf8');
+    let users = await fsPromises.readFile(path.join(__dirname, 'model', 'users.txt'), 'utf8');
     const userJson = JSON.parse(users);
     res.json(userJson);
 });
 
-// post request handler for sign in 
-app.post('/users', async (req, res)=>{
-    try {
-        const usersRaw = await fsPromises.readFile(path.join(__dirname, 'files', 'users.txt'), 'utf8');
-        const users = JSON.parse(usersRaw);
-        const usernamefind = users.find(user => user.name == req.body.name);
-        if (usernamefind === undefined){
-            const hashedPassword = await bcrypt.hash(req.body.password, 10);
-            const user = {name: req.body.name, password: hashedPassword};
-            users.push(user);
-            const updatedUsers = JSON.stringify(users);
-            await fsPromises.writeFile(path.join(__dirname, 'files', 'users.txt'),updatedUsers);
-            res.status(201).json({message:"User Created"})
-        } else {
-            res.status(400).json({message:"Username Taken"});
-        }
-    } catch {
-        res.sendStatus(500);
-    }
-});
+
 
 // post request handler for log in 
 app.post('/login', async (req, res) => {
-    const usersRaw = await fsPromises.readFile(path.join(__dirname, 'files', 'users.txt'), 'utf8');
+    const usersRaw = await fsPromises.readFile(path.join(__dirname, 'model', 'users.txt'), 'utf8');
     const users = JSON.parse(usersRaw);
     console.log(users);
     const user = users.find(user => user.name = req.body.name);
