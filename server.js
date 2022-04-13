@@ -21,7 +21,7 @@ app.post('/users', async (req, res)=>{
         const usersRaw = await fsPromises.readFile(path.join(__dirname, 'files', 'users.txt'), 'utf8');
         const users = JSON.parse(usersRaw);
         const usernamefind = users.find(user => user.name == req.body.name);
-        if (usernamefind ===undefined){
+        if (usernamefind === undefined){
             const hashedPassword = await bcrypt.hash(req.body.password, 10);
             const user = {name: req.body.name, password: hashedPassword};
             users.push(user);
@@ -31,8 +31,8 @@ app.post('/users', async (req, res)=>{
         } else {
             res.status(400).json({message:"Username Taken"});
         }
-    } catch{
-        res.status(500);
+    } catch {
+        res.sendStatus(500);
     }
 });
 
@@ -46,10 +46,10 @@ app.post('/login', async (req, res) => {
     if(user === undefined){
         return res.status(400).json({"message":"Cannot Find User"});
     }
-    try{
+    try {
        if (await bcrypt.compare(req.body.password, user.password)){
            res.json({"message":"succeess"});
-       } else{
+       } else {
            res.status(401).json({"message":"Wrong Password"});
        }
     } catch {
