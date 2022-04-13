@@ -1,7 +1,5 @@
 const express = require("express");
 const router = express.Router();
-
-
 const bcrypt = require('bcrypt');
 const fsPromises = require('fs').promises;
 const path = require('path');
