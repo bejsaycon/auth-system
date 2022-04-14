@@ -1,8 +1,6 @@
-//Handles the process of signing up for an account... 
 
 const User = require('../model/User');
 const bcrypt = require("bcrypt");
-
 
 const handleNewUser = async (req, res) => {
   const {usrnm, pwd} = req.body;
