@@ -11,13 +11,13 @@ app.use(cors());
 // built in middleware for json 
 app.use(express.json());
 
-//api for users data TODO: and Create Controller
+//api for users data
 app.use('/users', require('./routes/api/users'));
 
-// post request handler for register user TODO: Create Controller
+// post request handler for register user
 app.use('/register', require('./routes/register'));
 
-// post request handler for login TODO: Create Router and Create Controller
+// post request handler for login
 app.use('/login', require('./routes/login'));
 
 const PORT = process.env.PORT || 8080;
