@@ -1,5 +1,5 @@
 // Simple Authentication System Sign-in/Sign-up with express js
-//TODO : Connect Database to MongoDB
+
 require("dotenv").config();
 const express = require("express");
 const app = express();

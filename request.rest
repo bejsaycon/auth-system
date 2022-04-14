@@ -6,8 +6,8 @@ POST http://localhost:8080/register
 Content-Type: application/json
 
 {
-    "name": "admin5", 
-    "password" : "admin"
+    "usrnm": "bjsaycon", 
+    "pwd" : "admin"
 }
 
 ###
@@ -15,6 +15,6 @@ POST http://localhost:8080/login
 Content-Type: application/json
 
 {
-    "name": "admin1", 
-    "password" : "admin"
+    "usrnm": "admin5", 
+    "pwd" : "admin"
 }

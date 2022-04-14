@@ -1,30 +1,25 @@
+//Handles the process of signing up for an account... 
+
+const User = require('../model/User');
 const bcrypt = require("bcrypt");
-const fsPromises = require("fs").promises;
-const path = require("path");
+
 
 const handleNewUser = async (req, res) => {
+  const {usrnm, pwd} = req.body;
+  if ( !usrnm || !pwd ) return res.status(400).json({'message':'Username and Password are required!'});
+  //check for duplicate usernames in the database
+  const duplicate = await User.findOne({ username: usrnm }).exec();
+  if (duplicate) return res.sendStatus(409); //Conflict 
   try {
-    const usersRaw = await fsPromises.readFile(
-      path.join(__dirname, "..", "model", "users.txt"),
-      "utf8"
-    );
-    const users = JSON.parse(usersRaw);
-    const usernamefind = users.find((user) => user.name == req.body.name);
-    if (usernamefind === undefined) {
-      const hashedPassword = await bcrypt.hash(req.body.password, 10);
-      const user = { name: req.body.name, password: hashedPassword };
-      users.push(user);
-      const updatedUsers = JSON.stringify(users);
-      await fsPromises.writeFile(
-        path.join(__dirname, "..", "model", "users.txt"),
-        updatedUsers
-      );
-      res.status(201).json({ message: "User Created" });
-    } else {
-      res.status(400).json({ message: "Username Taken" });
-    }
+      const hashedPassword = await bcrypt.hash(pwd, 10);
+      const result = await User.create({
+        'username': usrnm,
+        'password': hashedPassword
+      });
+      console.log(result); //remove later only for testing purposes
+      res.status(201).json({ 'success': `User ${usrnm} Created!` });
   } catch (err) {
-    res.json({ message: err.message });
+    res.status(500).json({ 'message': err.message });
   }
 };
 
