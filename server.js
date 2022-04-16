@@ -31,3 +31,4 @@ mongoose.connection.once("open", () => {
   app.listen(PORT, () => {console.log(`Server running on port ${PORT}`)});
 });
 
+//TODO: Create Logger Middleware, Create Verify Role Middleware, Make use of JWT
