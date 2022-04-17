@@ -104,3 +104,14 @@
 20220417	20:36:11	c740f573-650e-4d0f-814e-55c92dba694c	GET	undefined	/refresh
 20220417	20:36:18	ee0605a2-f9ab-4c25-8b38-97efd71c1ba3	GET	undefined	/logout
 20220417	20:36:24	322f06a1-970f-4174-bcc4-a2d67c5feb2b	GET	undefined	/refresh
+20220417	20:48:03	0e44eb10-0ef2-41cb-bf7b-ad867f889000	POST	undefined	/login
+20220417	20:48:10	9dece3a0-e7e2-4960-9641-dcf20b28790a	GET	undefined	/users
+20220417	20:48:22	f903bea8-8804-4334-bf79-97b280447a4e	GET	undefined	/refresh
+20220417	20:48:37	2f3ee73b-b1e8-4dde-9819-8d8261582fe3	GET	undefined	/users
+20220417	20:48:55	171874f0-6af0-4d0d-a269-b590fa55e03e	GET	undefined	/logout
+20220417	20:48:58	93757748-1281-4116-a158-161349b8ab9b	GET	undefined	/users
+20220417	20:49:04	a0d0d9f6-491b-4d05-b643-9d3e61892a2f	POST	undefined	/login
+20220417	20:49:14	5b43fd5c-871d-46ae-bb5b-c361070778e6	GET	undefined	/users
+20220417	20:49:36	d9c48b5a-d249-4a0c-bce5-a44cab9f4103	GET	undefined	/refresh
+20220417	20:49:49	431a89dd-f98c-43ba-b9be-cd7c02ca0377	GET	undefined	/contacts
+20220417	20:49:53	e77f3993-a84d-472f-8f5f-5487de207255	GET	undefined	/contacts
