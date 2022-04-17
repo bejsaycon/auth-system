@@ -6,8 +6,8 @@ POST http://localhost:8080/register
 Content-Type: application/json
 
 {
-    "usrnm": "bjsaycon", 
-    "pwd" : "@Aadmin"
+    "usrnm": "jeff", 
+    "pwd" : "@Aadmin!"
 }
 
 ###
@@ -15,6 +15,6 @@ POST http://localhost:8080/login
 Content-Type: application/json
 
 {
-    "usrnm": "admin5", 
-    "pwd" : "admin"
+    "usrnm": "bjsaycon", 
+    "pwd" : "@Aadmin!"
 }

@@ -15,3 +15,15 @@
 20220417	17:05:38	e3797b57-4743-468a-bdbd-0a32bba739d2	DELETE	undefined	/users
 20220417	17:06:48	927b3818-c2cb-463d-8918-aaa853ceab49	DELETE	undefined	/users
 20220417	17:07:00	3b389317-0150-48b3-ad9a-b71a92e779e6	GET	undefined	/users
+20220417	17:08:37	37a1c353-0e02-4ec3-a8f8-6893c482a3f8	POST	undefined	/register
+20220417	17:08:47	96077aa4-c1a8-4f6a-aeb3-a5b80a0ff470	POST	undefined	/login
+20220417	17:08:57	ea0b3925-cd8d-4297-879d-cb175d5530f2	POST	undefined	/register
+20220417	17:09:00	ea74c215-94ad-44ef-8581-5a89ed98811b	GET	undefined	/users
+20220417	17:10:05	61636be0-7b68-434a-9f7a-0def324730d4	GET	undefined	/users/625bd92917fde2bfc0ba7b02
+20220417	17:10:28	6c0d286c-7078-42b8-a670-b76034e5fc51	GET	undefined	/users
+20220417	17:10:32	14533e48-0f85-442d-a745-cf4a856e7841	POST	undefined	/register
+20220417	17:10:51	2d7a34bb-1cd2-40ea-907d-7f96a52a0170	POST	undefined	/register
+20220417	17:10:56	7bbf38bf-3091-4fbf-8679-b80dec6506b3	GET	undefined	/users
+20220417	17:11:15	2acd8d51-5213-41d1-835c-9f4d12c4b0f0	DELETE	undefined	/users
+20220417	17:12:29	8ef0e167-2cf8-41c7-b579-7dfe1b246a0d	GET	undefined	/users/625bd92917fde2bfc0ba7b02
+20220417	17:12:42	6275bb7f-4047-4c6c-b620-591977142e13	GET	undefined	/users
