@@ -7,7 +7,7 @@ router.route('/')
     .get(usersController.getAllUsers)
     .delete(usersController.deleteUser);
 
-router.route('/:id')
+router.route('/:user')
     .get(usersController.getSingleUser);
 
 module.exports = router;

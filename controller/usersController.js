@@ -21,9 +21,11 @@ const deleteUser = async (req, res) => {
 };
 
 const getSingleUser = async (req, res) => {
-  if (!req?.params?.id)
+  console.log(req.params.user)
+  if (!req?.params?.user){
     return res.status(400).json({ message: "User ID required" });
-  const user = User.findOne({ _id: req.params.id }).exec();
+}
+  const user = User.findOne({ username: req.params.user }).exec();
   if (!user) {
     return res.status(204).json({ message: "User ID not found" });
   }

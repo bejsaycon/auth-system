@@ -1,9 +1,11 @@
-// Simple Authentication System Sign-in/Sign-up with express js
+// TO FIX: usersController.getSingleUser 
 
 require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const corsOptions = require('./config/corsOptions');
+const credentials = require('./middleware/credentials');
 const { logger } = require('./middleware/logEvents');
 const errorHandler = require('./middleware/errorHandler');
 const mongoose = require("mongoose");
@@ -16,8 +18,12 @@ connectDB();
 // custom middleware logger
 app.use(logger);
 
+// Handle options credentials check - before CORS!
+// and fetch cookies credentials requirement
+app.use(credentials);
+
 // Cross Origin Resource Sharing
-app.use(cors());
+app.use(cors(corsOptions));
 
 // built in middleware for json
 app.use(express.json());
@@ -35,7 +41,7 @@ app.use("/login", require("./routes/login"));
 app.use('/contacts', require('./routes/api/contacts'));
 
 //custom middleware for errors
-app.use(errorHandler);
+app.use(errorHandler); 
 
 mongoose.connection.once("open", () => {
   console.log("Connected to MongoDB");

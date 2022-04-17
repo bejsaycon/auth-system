@@ -13,17 +13,16 @@ const handleLogin = async (req, res) => {
     if (match) {
 
         //create JWT
-        console.log(foundUser.username);
-        const accessToken = jwt.sign(
-            {'username': foundUser.username},
-            process.env.ACCESS_TOKEN_SECRET,
-            {expiresIn: '70s'}
-        );
-        const refreshToken = jwt.sign(
-            {'username': foundUser.username},
-            process.env.REFRESH_TOKEN_SECRET,
-            {expiresIn: '1d'}
-        );
+        // const accessToken = jwt.sign(
+        //     {'username': foundUser.username},
+        //     process.env.ACCESS_TOKEN_SECRET,
+        //     {expiresIn: '70s'}
+        // );
+        // const refreshToken = jwt.sign(
+        //     {'username': foundUser.username},
+        //     process.env.REFRESH_TOKEN_SECRET,
+        //     {expiresIn: '1d'}
+        // );
 
         res.json({"success":"User Logged in!"});
     }

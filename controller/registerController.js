@@ -14,7 +14,6 @@ const handleNewUser = async (req, res) => {
         'username': usrnm,
         'password': hashedPassword
       });
-      console.log(result); //remove later only for testing purposes
       res.status(201).json({ 'success': `User ${usrnm} Created!` });
   } catch (err) {
     res.status(500).json({ 'message': err.message });
