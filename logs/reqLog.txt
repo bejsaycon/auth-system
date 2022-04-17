@@ -4,3 +4,14 @@
 20220417	13:47:15	c780f978-326f-4668-b5cd-d29aef702d28	PUT	undefined	/contacts
 20220417	13:47:41	9f03d26a-047f-45c9-83a4-ab558e3d4756	GET	undefined	/contacts/3
 20220417	13:48:34	db8273c2-0206-44e3-802d-4a544c3dcef9	DELETE	undefined	/contacts
+20220417	16:08:55	da558817-7af7-4200-9236-c32c655e83aa	POST	undefined	/login
+20220417	16:54:06	a871051d-eaad-4350-a954-94a14d60efac	GET	undefined	/users
+20220417	16:54:20	442eceec-a5d8-45d4-ad8c-0beec8bd5e85	POST	undefined	/register
+20220417	16:54:23	6fd876c7-74fe-490b-9574-2048aac583a1	GET	undefined	/users
+20220417	16:56:45	0398873c-de0c-4ce2-ab3e-37ccfe25dfc2	DELETE	undefined	/users
+20220417	16:57:23	5a0824e1-3283-472e-8ec3-1d1510d9e9ff	DELETE	undefined	/users
+20220417	16:58:09	e84ae7e7-0593-449e-b706-35f1b74dd747	GET	undefined	/users
+20220417	17:01:29	30e9b280-61bb-4df2-a240-cd84b06900a6	GET	undefined	/users
+20220417	17:05:38	e3797b57-4743-468a-bdbd-0a32bba739d2	DELETE	undefined	/users
+20220417	17:06:48	927b3818-c2cb-463d-8918-aaa853ceab49	DELETE	undefined	/users
+20220417	17:07:00	3b389317-0150-48b3-ad9a-b71a92e779e6	GET	undefined	/users
