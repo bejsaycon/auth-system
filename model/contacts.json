@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "fullname": "Mr Joshua Hale",
+        "address": "Park Lane 2639, Youghal, Dún LaoghaireRathdown 98686 Ireland",
+        "email": "joshua.hale@example.com",
+        "phone": "041-165-1596"
+    },
+    {
+        "id": 2,
+        "fullname": "Miss Britney Sims",
+        "address": "Tara Street 9617, Dublin, Westmeath 66909 Ireland",
+        "email": "britney.sims@example.com",
+        "phone": "011-578-8963"
+    }
+]

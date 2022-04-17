@@ -31,6 +31,8 @@ app.use("/register", require("./routes/register"));
 // post request handler for login
 app.use("/login", require("./routes/login"));
 
+app.use('/contacts', require('./routes/api/contacts'));
+
 app.use(errorHandler);
 
 mongoose.connection.once("open", () => {

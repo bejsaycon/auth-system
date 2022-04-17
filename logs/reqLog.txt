@@ -1,1 +1,6 @@
 20220417	12:32:55	69287d25-5e0b-4c21-bb8f-52ab3ffa83c2	POST	undefined	/login
+20220417	13:43:28	fe0c591a-cc1a-4f35-ae18-ee28fdadea14	GET	undefined	/contacts
+20220417	13:45:49	0aedf601-dc5b-4da9-a8c8-030d75f828d7	POST	undefined	/contacts
+20220417	13:47:15	c780f978-326f-4668-b5cd-d29aef702d28	PUT	undefined	/contacts
+20220417	13:47:41	9f03d26a-047f-45c9-83a4-ab558e3d4756	GET	undefined	/contacts/3
+20220417	13:48:34	db8273c2-0206-44e3-802d-4a544c3dcef9	DELETE	undefined	/contacts
