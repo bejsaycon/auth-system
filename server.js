@@ -6,6 +6,7 @@ const app = express();
 const cors = require("cors");
 const corsOptions = require('./config/corsOptions');
 const credentials = require('./middleware/credentials');
+const verifyJWT = require('./middleware/verifyJWT');
 const { logger } = require('./middleware/logEvents');
 const errorHandler = require('./middleware/errorHandler');
 const mongoose = require("mongoose");
@@ -25,20 +26,20 @@ app.use(credentials);
 // Cross Origin Resource Sharing
 app.use(cors(corsOptions));
 
+// built-in middleware to handle urlencoded form data
+app.use(express.urlencoded({ extended: false }));
+
 // built in middleware for json
 app.use(express.json());
 
-//api for users data
-app.use("/users", require("./routes/api/users"));
-
-// post request handler for register user
 app.use("/register", require("./routes/register"));
-
-// post request handler for login
 app.use("/login", require("./routes/login"));
+app.use('/refresh', require('./routes/refresh'));
+app.use('/logout', require('./routes/logout'));
 
-//router for create update delete get post for contacts api
+app.use(verifyJWT);
 app.use('/contacts', require('./routes/api/contacts'));
+app.use("/users", require("./routes/api/users"));
 
 //custom middleware for errors
 app.use(errorHandler); 

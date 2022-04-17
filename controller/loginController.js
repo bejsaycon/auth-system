@@ -11,23 +11,30 @@ const handleLogin = async (req, res) => {
     //check password
     const match = await bcrypt.compare(pwd, foundUser.password);
     if (match) {
-
-        //create JWT
-        // const accessToken = jwt.sign(
-        //     {'username': foundUser.username},
-        //     process.env.ACCESS_TOKEN_SECRET,
-        //     {expiresIn: '70s'}
-        // );
-        // const refreshToken = jwt.sign(
-        //     {'username': foundUser.username},
-        //     process.env.REFRESH_TOKEN_SECRET,
-        //     {expiresIn: '1d'}
-        // );
-
-        res.json({"success":"User Logged in!"});
+        const roles = Object.values(foundUser.roles);
+        const accessToken = jwt.sign(
+            {
+                "UserInfo": {
+                    "username": foundUser.username,
+                    "roles": roles
+                }
+            },
+            process.env.ACCESS_TOKEN_SECRET,
+            {expiresIn: '70s'}
+        );
+        const refreshToken = jwt.sign(
+            {'username': foundUser.username},
+            process.env.REFRESH_TOKEN_SECRET,
+            {expiresIn: '1d'}
+        );
+        foundUser.refreshToken = refreshToken;
+        const result = await foundUser.save();
+        console.log(result);
+        res.cookie('jwt', refreshToken, { httpOnly: true, sameSite: 'None', maxAge: 24 * 60 * 60 * 1000 }); //secure: true, 
+        res.json({ accessToken });
     }
     else {
-        res.status(401).json({"message":"Wrong Password"});
+        res.sendStatus(401);
     }
 }
 
