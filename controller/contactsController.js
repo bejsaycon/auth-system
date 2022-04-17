@@ -1,60 +1,61 @@
-const data = {
-    contacts: require('../model/contacts.json'),
-    setContacts: function(data) {
-        this.contacts = data 
-    }
+const Contact = require('../model/Contact');
+
+const getAllContacts = async(req, res) => {
+    const contacts = await Contact.find();
+    if (!contacts) return res.status(204).json({ 'message': 'No contacts found.' });
+    res.json(contacts);
 }
 
-const getAllContacts = (req, res) => {
-    res.json(data.contacts);
-}
-
-const createNewContact = (req, res) => {
-    const newContact = {
-        id: data.contacts?.length ? data.contacts[data.contacts.length - 1].id + 1 : 1,
-        fullname: req.body.contactFullname,
-        address: req.body.contactAddress,
-        email: req.body.contactEmail,
-        phone: req.body.contactPhone
-    }
-
-    if (!newContact.fullname || !newContact.address || !newContact.email || !newContact.phone ) {
+const createNewContact = async(req, res) => {
+    if (!req?.body?.contactFullname || !req?.body?.contactAddress || !req?.body?.contactEmail || !req?.body?.contactPhone ) {
         return res.status(400).json({ 'message': 'All details required!' });
     }
-    data.setContacts([...data.contacts, newContact]);
-    res.status(201).json(data.contacts);
-}
-
-const updateContact = (req, res) => {
-    const contact = data.contacts.find(person => person.id === parseInt(req.body.id));
-    if (!contact) {
-        return res.status(400).json({'message':`Contact id ${req.body.id} not found`})
+    try {
+        const result = await Contact.create({
+            fullname: req.body.contactFullname,
+            address: req.body.contactAddress,
+            email: req.body.contactEmail,
+            phone: req.body.contactPhone
+        });
+        res.status(201).json(result);
+    } catch(err) {
+        console.error(err);
     }
-    if (contact.fullname) contact.fullname = req.body.contactFullname ;
-    if (contact.address) contact.address = req.body.contactAddress ;
-    if (contact.email) contact.email = req.body.contactEmail ;
-    if (contact.phone) contact.phone = req.body.contactPhone ;
-
-    const filteredArray = data.contacts.filter(person => person.id !==parseInt(req.body.id));
-    const unsortedArray = [...filteredArray, contact];
-    data.setContacts(unsortedArray.sort((a, b)=> a.id > b.id ? 1 : a.id < b.id ? -1 : 0));
-    res.json(data.contacts);
 }
 
-const deleteContact = (req, res) => {
-    const contact = data.contacts.find(person => person.id === parseInt(req.body.id));
-    if (!contact) {
-        res.status(400).json({'message': `Contact id ${req.body.id} not found`});
+const updateContact = async(req, res) => {
+    if (!req?.body?.id) {
+        return res.status(400).json({'message':`ID PARAMETER REQUIRED`})
     }
-    const filteredArray = data.contacts.filter(person => person.id !== parseInt(req.body.id)) ;
-    data.setContacts([...filteredArray]);
-    res.json(data.contacts);
+    const contact = await Contact.findOne({ _id: req.body.id }).exec();
+    if (!contact) {
+        return res.status(204).json({ "message": `No contact matches ID ${req.body.id}.` });
+    }
+
+    if (req?.body?.contactFullname) contact.fullname = req.body.contactFullname ;
+    if (req?.body?.contactAddress) contact.address = req.body.contactAddress ;
+    if (req?.body?.contactEmail) contact.email = req.body.contactEmail ;
+    if (req?.body?.contactPhone) contact.phone = req.body.contactPhone ;
+
+    const result = await contact.save();
+    res.json(result);
 }
 
-const getSingleContact = (req, res) => {
-    const contact = data.contacts.find(person => person.id === parseInt(req.params.id));
+const deleteContact = async(req, res) => {
+    if (!req?.body?.id) return res.status(400).json({ 'message': 'Contact ID required.' });
+    const contact = await Contact.findOne({ _id: req.body.id }).exec();
     if (!contact) {
-        return res.status(400).json({'message': `Contact id ${req.params.id} not found`});
+        res.status(204).json({'message': `Contact id ${req.body.id} not found`});
+    }
+    const result = await contact.deleteOne({ _id: req.body.id });
+    res.json(result);
+}
+
+const getSingleContact = async(req, res) => {
+    if (!req?.params?.id) return res.status(400).json({ 'message': 'Contact ID required.' });
+    const contact = await Contact.findOne({ _id: req.params.id }).exec();
+    if (!contact) {
+        return res.status(400).json({'message': `No contact matches ID ${req.params.id}`});
     }
     res.json(contact);
 }
