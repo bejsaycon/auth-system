@@ -62,3 +62,5 @@
 20220418	20:54:15	281fee33-3717-4a81-a9c8-5db2684fbe11	POST	http://localhost:3000	/register
 20220418	20:57:33	8c2693e1-c06b-4bbf-9906-fc0c99d9d895	OPTIONS	http://localhost:3000	/register
 20220418	20:57:33	5430d0b6-b46c-4bd5-9f32-07876c0a14d6	POST	http://localhost:3000	/register
+20220418	21:10:49	2ab20f96-becc-417e-b94a-7e9219ec96a4	OPTIONS	http://localhost:3000	/register
+20220418	21:10:49	29635e15-f104-4297-9e7c-6084143b389c	POST	http://localhost:3000	/register
