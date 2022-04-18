@@ -7,6 +7,7 @@ const handleNewUser = async (req, res) => {
   if ( !usrnm || !pwd ) return res.status(400).json({'message':'Username and Password are required!'});
   //check for duplicate usernames in the database
   const duplicate = await User.findOne({ username: usrnm }).exec();
+  
   if (duplicate) return res.sendStatus(409); //Conflict 
   try {
       const hashedPassword = await bcrypt.hash(pwd, 10);
