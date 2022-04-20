@@ -105,3 +105,17 @@
 20220420	11:25:49	c182453a-6df9-491a-a094-23069ce953ce	POST	undefined	/login
 20220420	11:28:34	41e1ac74-24e6-4f49-92b0-5aa5effdb932	OPTIONS	http://localhost:3000	/login
 20220420	11:28:34	8587787f-08d6-49e7-a2b4-5cfa152e4c54	POST	http://localhost:3000	/login
+20220420	22:07:19	4e43d068-c144-47f6-b146-a30caf662e8a	OPTIONS	https://dashing-genie-6e6f75.netlify.app	/register
+20220420	22:08:00	db459fc2-60ed-4d38-83aa-2729eb0023a8	OPTIONS	https://dashing-genie-6e6f75.netlify.app	/register
+20220420	22:09:31	7d02768f-05a9-4019-955f-a3cc181d570f	OPTIONS	https://dashing-genie-6e6f75.netlify.app	/register
+20220420	22:10:41	d8fd6408-2a24-41a8-b9af-26ab4bc29145	OPTIONS	https://dashing-genie-6e6f75.netlify.app	/register
+20220420	22:13:53	4cb892b1-ef36-4096-92ce-e7646425c543	OPTIONS	https://dashing-genie-6e6f75.netlify.app	/register
+20220420	22:13:53	84404680-13cf-4bd5-83c5-397dbbd818f3	POST	https://dashing-genie-6e6f75.netlify.app	/register
+20220420	22:24:37	962efedb-24a7-4c64-adb1-3a41ec68a399	OPTIONS	https://boisterous-paletas-add22b.netlify.app	/login
+20220420	22:24:56	b7ad2b03-330f-4828-974b-3ae8d2709a6e	GET	undefined	/
+20220420	22:24:56	10b9a906-a7b4-49a6-a2aa-c3982c24b042	GET	undefined	/favicon.ico
+20220420	22:26:22	cda61b55-d5dc-4a09-8d4e-03b522a0ead7	OPTIONS	https://boisterous-paletas-add22b.netlify.app	/login
+20220420	22:26:53	bb2496ca-007f-4870-979b-cafd7dcdd9b2	OPTIONS	https://boisterous-paletas-add22b.netlify.app	/login
+20220420	22:26:53	24778377-1d58-4c9a-9247-2eae80f78f3c	POST	https://boisterous-paletas-add22b.netlify.app	/login
+20220420	22:38:18	6200d320-ef30-41c3-8505-08506c9a41d0	OPTIONS	https://boisterous-paletas-add22b.netlify.app	/register
+20220420	22:38:18	b452877a-7543-4b2a-a2ea-2aaccc2c1ae3	POST	https://boisterous-paletas-add22b.netlify.app	/register

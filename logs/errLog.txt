@@ -1,1 +1,7 @@
 20220417	16:56:45	890cbb1a-4754-40d5-84e0-aa834dc91699	SyntaxError: Unexpected token ' in JSON at position 1
+20220420	22:07:19	a3c9e58a-4f91-4886-930e-d63fefe0c810	Error: Not allowed by CORS
+20220420	22:08:00	38ec78fa-a9dc-4bc5-a756-301b1fc592b8	Error: Not allowed by CORS
+20220420	22:09:31	7d4863e6-fba3-43d3-863f-e9e6cb21b5ef	Error: Not allowed by CORS
+20220420	22:10:41	292391c9-6e67-44f7-b8b8-7c41d44d3473	Error: Not allowed by CORS
+20220420	22:24:37	174d4397-10cd-41de-a6f2-0fa8f78b68ec	Error: Not allowed by CORS
+20220420	22:26:22	426bd32f-c8ed-4a4c-a8ae-b91758b26117	Error: Not allowed by CORS
